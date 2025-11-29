@@ -22,8 +22,9 @@ if [ -L "$HOME/.zshrc" ]; then
     rm "$HOME/.zshrc"
 fi
 
-# create symlink for .zshrc
+# create symlink for .zshrc and .zprofile
 ln -s "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
+ln -s "$HOME/dotfiles/.zprofile" "$HOME/.zprofile"
 
 if [ "$SHELL" != "$(command -v zsh)" ]; then
     chsh -s "$(command -v zsh)"
