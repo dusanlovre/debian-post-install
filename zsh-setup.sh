@@ -2,7 +2,7 @@
 
 set -e
 
-echo "Installing packages"
+echo "Setting up zsh"
 sudo apt update
 sudo apt install -y zsh zsh-autosuggestions fzf git
 
@@ -12,23 +12,9 @@ else
     git clone https://github.com/dusanlovre/dotfiles.git "$HOME/dotfiles"
 fi
 
-# backup .zshrc
-if [ -f "$HOME/.zshrc" ] && [ ! -L "$HOME/.zshrc" ]; then
-    mv "$HOME/.zshrc" "$HOME/.zshrc.backup"
-fi
-
-# Remove old symlink if any
-if [ -L "$HOME/.zshrc" ]; then
-    rm "$HOME/.zshrc"
-fi
-
-# create symlink for .zshrc and .zprofile
-ln -s "$HOME/dotfiles/.zshrc" "$HOME/.zshrc"
-ln -s "$HOME/dotfiles/.zprofile" "$HOME/.zprofile"
-
 if [ "$SHELL" != "$(command -v zsh)" ]; then
     chsh -s "$(command -v zsh)"
 fi
 
-echo "Yay!"
+echo "zsh setup done"
 

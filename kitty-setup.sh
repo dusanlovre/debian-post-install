@@ -12,11 +12,4 @@ else
     git clone https://github.com/dusanlovre/dotfiles.git "$HOME/dotfiles"
 fi
 
-if [ -L "$HOME/.config/kitty/kitty.conf" ]; then
-    rm "$HOME/.config/kitty/kitty.conf"
-fi
-
-# create symlink for .zshrc and .zprofile
-ln -s "$HOME/dotfiles/kitty.conf" "$HOME/.config/kitty/kitty.conf"
-
 echo "Done with kitty"
