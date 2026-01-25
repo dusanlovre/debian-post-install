@@ -4,7 +4,7 @@ set -e
 
 echo "Setting up sway"
 sudo apt update
-sudo apt install -y sway light swaybg swayidle swayimg swaylock waybar wofi fonts-font-awesome 
+sudo apt install -y sway light swaybg swayidle swayimg swaylock waybar wofi fonts-font-awesome grimshot 
 
 if [ -d "$HOME/dotfiles" ]; then
     echo "dotfiles directory already exists"
